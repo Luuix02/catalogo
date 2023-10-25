@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
-import React from 'react';
+import React from 'react'
+import { useEffect, useState } from 'react'
 import Layout from "../../Components/Layout"
 import Card from "../../Components/Card"
+import ProductDetail from "../../Components/ProductDetail"
+
 
 /*const Home = () =>{*/
 function Home(){
@@ -12,11 +14,13 @@ const [items,setItems]= useState(null)
 useEffect(() =>{
 // https://fakeapi.platzi.com/
   fetch('https://api.escuelajs.co/api/v1/products')
-  .then(response => response.json())
-  .then(data => setItems(data))
+  .then(response => response.json() )
+  .then(data => setItems(data) )
+  .then(data => console.log(setItems(data)) )
+
   
-}, []
-)
+}, [])
+
   return (
   <>
 <Layout>
@@ -29,20 +33,12 @@ useEffect(() =>{
       ))
     }
   </div>
+  <ProductDetail/>
 </Layout>
   </>
   )
 }
 
-/*function Home(){
-    return(
-      <>
-      <Layout>
-        Home
-      <Card/>
-      </Layout>
-      </>
-    )
-}*/
+
 
 export default Home
