@@ -5,7 +5,7 @@ const Card = (data) => {
     const context = useContext(CartContext);
     const showProduct = (ProductDetail) => {
         context.openProductDetail()
-        context.setProductShow(ProductDetail)
+        context.setProductToShow(ProductDetail)
     }
     return(
             <div
